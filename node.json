@@ -1,0 +1,52 @@
+{
+    "name": "Chromium as a Node",
+    "permissions": {
+        "run-as-root": "X server needs root",
+        "unboxed": "Needs to access special device files",
+        "network": "Network access is required"
+    },
+    "options": [{
+        "title": "Urls",
+        "name": "urls",
+        "type": "list",
+        "itemname": "Url",
+        "items": [{
+            "title": "Url",
+            "ui_width": 9,
+            "name": "url",
+            "type": "string",
+            "default": "https://info-beamer.com/blog"
+        }, {
+            "title": "Duration",
+            "ui_width": 3,
+            "name": "duration",
+            "type": "select",
+            "options": [
+                [0, "Disabled"],
+                [10, "10 Seconds"],
+                [20, "20 Seconds"],
+                [30, "30 Seconds"],
+                [45, "45 Seconds"],
+                [60, "60 Seconds"],
+                [120, "2 Minutes"],
+                [180, "3 Minutes"],
+                [240, "4 Minutes"],
+                [300, "5 Minutes"],
+                [600, "10 Minutes"]
+            ],
+            "default": 30
+        }],
+        "default": [
+            {
+                "url": "https://info-beamer.com/blog",
+                "duration": 60
+            }
+        ]
+    }, {
+        "title": "Scripts",
+        "name": "scripts",
+        "type": "resource",
+        "valid": ["json"],
+        "default": "no-scripting.json"
+    }]
+}

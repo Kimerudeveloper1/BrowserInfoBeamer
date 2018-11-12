@@ -1,0 +1,31 @@
+#!/bin/sh
+sleep 5
+export DISPLAY=:0
+export HOME=/tmp/chromium
+export LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/nss
+rm -rf /tmp/chromium
+mkdir -p /tmp/chromium/.pki/nssdb 
+cp nssdb/* /tmp/chromium/.pki/nssdb 
+for cert in extra-certs/*; do
+    echo "adding cert ${cert}"
+    certutil -d sql:/tmp/chromium/.pki/nssdb -A -t "CP,CP," -n $cert -i $cert
+done
+chmod 1777 /tmp/chromium
+# https://ryantkelly.github.io/rpi-tv
+exec chpst -u $USER chromium-browser \
+    --kiosk \
+    --remote-debugging-port=9222 \
+    --disable-infobars \
+    --disable-ntp-popular-sites \
+    --disable-speech-api \
+    --disable-sync \
+    --disable-translate \
+    --no-default-browser-check \
+    --noerrdialogs \
+    --safebrowsing-disable-auto-update \
+    --disable-extensions \
+    --disable-notifications \
+    --no-sandbox \
+    about:blank
+
+# --no-first-run (disable /usr/lib/chromium-browser/master_preferences)

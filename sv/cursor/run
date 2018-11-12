@@ -1,0 +1,4 @@
+#!/bin/sh
+export DISPLAY=:0
+xdotool mousemove 1920 1080
+exec sleep 60

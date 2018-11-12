@@ -1,0 +1,4 @@
+#!/bin/sh
+# bump 56.0.2924.84-2017-11-09
+chmod 755 sv/*/run
+exec runsvdir sv

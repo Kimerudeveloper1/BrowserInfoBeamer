@@ -1,0 +1,24 @@
+
+{
+    "profile": {
+        "password_manager_enabled": false
+    },
+    "autofill": {
+        "enabled": false
+    },
+    "browser": {
+        "has_seen_welcome_page": true,
+        "check_default_browser" : false
+    },
+    "distribution": {
+        "suppress_first_run_bubble": true,
+        "skip_first_run_ui": true, 
+        "show_welcome_page" : false,
+        "import_search_engine": false,
+        "import_history": false, 
+        "import_home_page": false,
+        "create_all_shortcuts": false, 
+        "make_chrome_default": false 
+    }
+}
+

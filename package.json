@@ -1,0 +1,9 @@
+{
+    "name": "Fullscreen Browser",
+    "author": "info-beamer.com",
+    "version": "56.0.2924.84-r3",
+    "desc": "Chromium Browser packaged as an info-beamer hosted 'service'.",
+    "runtime": {
+        "transparent": true
+    }
+}
